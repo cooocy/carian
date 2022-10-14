@@ -1,6 +1,6 @@
-package ink.wulian.godrick.query.page;
+package ink.wulian.er.godrick.query.page;
 
-import ink.wulian.godrick.query.Order;
+import ink.wulian.er.godrick.query.Order;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -30,14 +30,24 @@ public class StatisticPageQueryArgs {
 
     public StatisticPageQueryArgs(long page, int limit) {
         this.page = page;
-        this.limit = limit;
+        this.setLimit(limit);
         this.order = null;
     }
 
     public StatisticPageQueryArgs(long page, int limit, @Nonnull Order order) {
         this.page = page;
-        this.limit = limit;
+        this.setLimit(limit);
         this.order = order;
+    }
+
+    private void setLimit(int limit) {
+        this.limit = limit;
+        if (this.limit < 1) {
+            this.limit = 1;
+        }
+        if (this.limit > 501) {
+            this.limit = 501;
+        }
     }
 
 }

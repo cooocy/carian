@@ -1,12 +1,13 @@
 plugins {
     id 'java'
+    id 'java-library'
     id 'jacoco'
     id 'maven-publish'
 }
 
-group = 'ink.wulian.limgrave'
+group = 'ink.wulian.er'
 sourceCompatibility = '17'
-version = '1.0'
+version = '1.0.0'
 
 configurations {
     compileOnly {
@@ -15,22 +16,20 @@ configurations {
 }
 
 repositories {
-    // mavenCentral()
     maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
     maven { url "https://jitpack.io" }
+    mavenCentral()
 }
 
 dependencies {
+    // lombok
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+
     implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.12.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-}
-
-task sourcesJar(type: Jar) {
-    from sourceSets.main.allJava
-    archiveClassifier = 'sources'
 }
 
 test {
@@ -47,14 +46,39 @@ jacocoTestReport {
     }
 }
 
+java {
+    withSourcesJar()
+}
+
 publishing {
+
+    repositories {
+        maven {
+            url 'https://nexus.5lian.ink/repository/the-lands-between/'
+            credentials {
+                username 'dev-0'
+                password 'todo'
+            }
+        }
+    }
+
     publications {
-        maven(MavenPublication) {
-            groupId = "$project.group"
+        mavenJava(MavenPublication) {
             artifactId = rootProject.name
-            version = "$project.version"
             from components.java
-            artifact sourcesJar
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = 'Godrick'
+                description = 'Web Kits Collections.'
+                url = 'https://nexus.5lian.ink'
+            }
         }
     }
 

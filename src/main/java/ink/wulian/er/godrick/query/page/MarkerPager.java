@@ -1,4 +1,4 @@
-package ink.wulian.godrick.query.page;
+package ink.wulian.er.godrick.query.page;
 
 import javax.annotation.Nonnull;
 import java.util.List;

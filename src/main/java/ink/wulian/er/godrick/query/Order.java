@@ -1,4 +1,4 @@
-package ink.wulian.godrick.query;
+package ink.wulian.er.godrick.query;
 
 public enum Order {
 

@@ -1,6 +1,6 @@
-package ink.wulian.godrick.query.page;
+package ink.wulian.er.godrick.query.page;
 
-import ink.wulian.godrick.query.Order;
+import ink.wulian.er.godrick.query.Order;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -36,7 +36,7 @@ public class MarkerPageQueryArgs<M> {
      * @param limit 不在范围内的, 会被强制赋值到 [1, 501]
      */
     public MarkerPageQueryArgs(int limit) {
-        this.limit = limit;
+        this.setLimit(limit);
         this.idMarker = null;
         this.order = null;
     }
@@ -46,7 +46,7 @@ public class MarkerPageQueryArgs<M> {
      * @param idMarker x
      */
     public MarkerPageQueryArgs(int limit, @Nonnull M idMarker) {
-        this.limit = limit;
+        this.setLimit(limit);
         this.idMarker = idMarker;
         this.order = null;
     }
@@ -56,7 +56,7 @@ public class MarkerPageQueryArgs<M> {
      * @param order x
      */
     public MarkerPageQueryArgs(int limit, @Nonnull Order order) {
-        this.limit = limit;
+        this.setLimit(limit);
         this.idMarker = null;
         this.order = order;
     }
@@ -67,9 +67,19 @@ public class MarkerPageQueryArgs<M> {
      * @param order    x
      */
     public MarkerPageQueryArgs(int limit, @Nonnull M idMarker, @Nonnull Order order) {
-        this.limit = limit;
+        this.setLimit(limit);
         this.idMarker = idMarker;
         this.order = order;
+    }
+
+    private void setLimit(int limit) {
+        this.limit = limit;
+        if (this.limit < 1) {
+            this.limit = 1;
+        }
+        if (this.limit > 501) {
+            this.limit = 501;
+        }
     }
 
 }

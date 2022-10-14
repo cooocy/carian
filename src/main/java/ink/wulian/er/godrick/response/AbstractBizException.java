@@ -1,4 +1,4 @@
-package ink.wulian.godrick.response;
+package ink.wulian.er.godrick.response;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
