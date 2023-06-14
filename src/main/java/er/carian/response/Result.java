@@ -1,4 +1,4 @@
-package ink.wulian.er.godrick.response;
+package er.carian.response;
 
 import lombok.ToString;
 

@@ -1,4 +1,4 @@
-package ink.wulian.godrick.response;
+package er.carian.response;
 
 import org.junit.jupiter.api.Test;
 

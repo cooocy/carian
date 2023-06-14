@@ -1,7 +1,6 @@
-package ink.wulian.godrick.query.page;
+package er.carian.query.page;
 
-import ink.wulian.er.godrick.query.Order;
-import ink.wulian.er.godrick.query.page.MarkerPageQueryArgs;
+import er.carian.query.Order;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

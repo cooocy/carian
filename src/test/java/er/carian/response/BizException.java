@@ -1,6 +1,4 @@
-package ink.wulian.godrick.response;
-
-import ink.wulian.er.godrick.response.AbstractBizException;
+package er.carian.response;
 
 import javax.annotation.Nonnull;
 

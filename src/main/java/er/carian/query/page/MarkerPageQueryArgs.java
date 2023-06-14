@@ -1,6 +1,6 @@
-package ink.wulian.er.godrick.query.page;
+package er.carian.query.page;
 
-import ink.wulian.er.godrick.query.Order;
+import er.carian.query.Order;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

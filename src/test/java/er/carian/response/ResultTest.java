@@ -1,6 +1,5 @@
-package ink.wulian.godrick.response;
+package er.carian.response;
 
-import ink.wulian.er.godrick.response.Result;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
