@@ -7,7 +7,7 @@ plugins {
 
 sourceCompatibility = '17'
 group = 'er'
-version = '1.0.0'
+version = '1.0.1'
 
 configurations {
     compileOnly {
@@ -25,7 +25,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
-    api 'com.google.guava:guava:31.1-jre'
+    implementation 'com.google.guava:guava:31.1-jre'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testImplementation 'org.mockito:mockito-core:3.12.1'

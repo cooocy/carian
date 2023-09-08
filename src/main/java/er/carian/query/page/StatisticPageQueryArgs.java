@@ -2,7 +2,6 @@ package er.carian.query.page;
 
 import er.carian.query.Order;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
@@ -34,7 +33,7 @@ public class StatisticPageQueryArgs {
         this.order = null;
     }
 
-    public StatisticPageQueryArgs(long page, int limit, @Nonnull Order order) {
+    public StatisticPageQueryArgs(long page, int limit, Order order) {
         this.page = page;
         this.setLimit(limit);
         this.order = order;

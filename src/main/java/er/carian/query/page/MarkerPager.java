@@ -1,6 +1,5 @@
 package er.carian.query.page;
 
-import javax.annotation.Nonnull;
 import java.util.List;
 
 /**
@@ -12,12 +11,12 @@ public class MarkerPager<R, M> {
 
     public final M nextMarker;
 
-    public MarkerPager(@Nonnull List<R> records) {
+    public MarkerPager(List<R> records) {
         this.records = records;
         this.nextMarker = null;
     }
 
-    public MarkerPager(@Nonnull List<R> records, @Nonnull M nextMarker) {
+    public MarkerPager(List<R> records, M nextMarker) {
         this.records = records;
         this.nextMarker = nextMarker;
     }

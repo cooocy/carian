@@ -3,8 +3,6 @@ package er.carian.response;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import javax.annotation.Nonnull;
-
 @ToString
 @EqualsAndHashCode(callSuper = false)
 public abstract class AbstractBizException extends RuntimeException {
@@ -13,7 +11,7 @@ public abstract class AbstractBizException extends RuntimeException {
 
     public final String message;
 
-    public AbstractBizException(int code, @Nonnull String message) {
+    public AbstractBizException(int code, String message) {
         this.code = code;
         this.message = message;
     }

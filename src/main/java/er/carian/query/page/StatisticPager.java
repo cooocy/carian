@@ -1,6 +1,5 @@
 package er.carian.query.page;
 
-import javax.annotation.Nonnull;
 import java.util.List;
 
 /**
@@ -36,7 +35,7 @@ public class StatisticPager<R> {
      * @param limit    每页几条
      * @param totalCnt 总条数
      */
-    public StatisticPager(@Nonnull List<R> records, long page, long limit, long totalCnt) {
+    public StatisticPager(List<R> records, long page, long limit, long totalCnt) {
         this.records = records;
         this.page = page;
         this.limit = limit;
@@ -49,7 +48,7 @@ public class StatisticPager<R> {
      * @param queryArgs 原始查询参数
      * @param totalCnt  总条数
      */
-    public StatisticPager(@Nonnull List<R> records, @Nonnull StatisticPageQueryArgs queryArgs, long totalCnt) {
+    public StatisticPager(List<R> records, StatisticPageQueryArgs queryArgs, long totalCnt) {
         this(records, queryArgs.page, queryArgs.limit, totalCnt);
     }
 
@@ -59,11 +58,11 @@ public class StatisticPager<R> {
      * @param originalPager 原分页结果
      * @param newRecords    新 records
      */
-    public static <N, R> StatisticPager<N> copyAndAssemble(@Nonnull StatisticPager<R> originalPager, @Nonnull List<N> newRecords) {
+    public static <N, R> StatisticPager<N> copyAndAssemble(StatisticPager<R> originalPager, List<N> newRecords) {
         return new StatisticPager<>(newRecords, originalPager.page, originalPager.limit, originalPager.totalCnt, originalPager.totalPage);
     }
 
-    private StatisticPager(@Nonnull List<R> records, long page, long limit, long totalCnt, long totalPage) {
+    private StatisticPager(List<R> records, long page, long limit, long totalCnt, long totalPage) {
         this.records = records;
         this.page = page;
         this.limit = limit;

@@ -2,7 +2,6 @@ package er.carian.query.page;
 
 import er.carian.query.Order;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
@@ -45,7 +44,7 @@ public class MarkerPageQueryArgs<M> {
      * @param limit    不在范围内的, 会被强制赋值到 [1, 501]
      * @param idMarker x
      */
-    public MarkerPageQueryArgs(int limit, @Nonnull M idMarker) {
+    public MarkerPageQueryArgs(int limit, M idMarker) {
         this.setLimit(limit);
         this.idMarker = idMarker;
         this.order = null;
@@ -55,7 +54,7 @@ public class MarkerPageQueryArgs<M> {
      * @param limit 不在范围内的, 会被强制赋值到 [1, 501]
      * @param order x
      */
-    public MarkerPageQueryArgs(int limit, @Nonnull Order order) {
+    public MarkerPageQueryArgs(int limit, Order order) {
         this.setLimit(limit);
         this.idMarker = null;
         this.order = order;
@@ -66,7 +65,7 @@ public class MarkerPageQueryArgs<M> {
      * @param idMarker x
      * @param order    x
      */
-    public MarkerPageQueryArgs(int limit, @Nonnull M idMarker, @Nonnull Order order) {
+    public MarkerPageQueryArgs(int limit, M idMarker, Order order) {
         this.setLimit(limit);
         this.idMarker = idMarker;
         this.order = order;

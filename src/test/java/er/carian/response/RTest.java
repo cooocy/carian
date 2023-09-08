@@ -4,11 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ResultTest {
+class RTest {
 
     @Test
     void testOk() {
-        Result<Void> r1 = Result.ok();
+        R<Void> r1 = R.ok();
         assertNotNull(r1);
         assertTrue(r1.success);
         assertEquals(0, r1.code);
@@ -16,7 +16,7 @@ class ResultTest {
         assertNull(r1.data);
 
         String data2 = "x";
-        Result<String> r2 = Result.ok(data2);
+        R<String> r2 = R.ok(data2);
         assertNotNull(r2);
         assertTrue(r2.success);
         assertEquals(0, r2.code);
@@ -28,7 +28,7 @@ class ResultTest {
     void testErr() {
         int code = 2;
         String message = "x";
-        Result<Void> r = Result.err(code, message);
+        R<Void> r = R.err(code, message);
         assertNotNull(r);
         assertFalse(r.success);
         assertEquals(code, r.code);
