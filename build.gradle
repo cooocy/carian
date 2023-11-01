@@ -54,10 +54,10 @@ publishing {
 
     repositories {
         maven {
-            url 'https://nexus.dcyy.cc/repository/the-lands-between/'
+            url 'https://maven.pkg.github.com/cooocy/the-lands-between'
             credentials {
-                username 'dev-0'
-                password 'todo'
+                username 'cooocy@foxmail.com'
+                password 'x'
             }
         }
     }
@@ -77,7 +77,7 @@ publishing {
             pom {
                 name = 'Carian'
                 description = 'Web Kits Collections.'
-                url = 'https://nexus.5lian.ink'
+                url = 'https://github.com/cooocy/carian'
             }
         }
     }
