@@ -7,7 +7,7 @@ plugins {
 
 sourceCompatibility = '17'
 group = 'er'
-version = '1.0.1'
+version = '1.0.2'
 
 configurations {
     compileOnly {
