@@ -26,13 +26,12 @@ class RTest {
 
     @Test
     void testErr() {
-        int code = 2;
-        String message = "x";
-        R<Void> r = R.err(code, message);
+        BizException be = new BizException(Codes.Ok);
+        R<Void> r = R.err(be);
         assertNotNull(r);
         assertFalse(r.success);
-        assertEquals(code, r.code);
-        assertEquals(message, r.message);
+        assertEquals(be.code, r.code);
+        assertEquals(be.message, r.message);
         assertNull(r.data);
     }
 
